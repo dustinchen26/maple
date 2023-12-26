@@ -5,13 +5,11 @@
   <meta charset="UTF-8">
   <title>Maple_Tool</title>
   <style>
-    /* 设置整体布局 */
     body,
     html {
       height: 100%;
       margin: 0;
       font-family: 'Arial', sans-serif;
-      /* 更改字体 */
     }
 
     /* 分割上、左、右框架 */
@@ -23,86 +21,62 @@
 
     .top {
       height: 70px;
-      /* 控制上方框架的高度 */
       display: flex;
       align-items: center;
       padding-left: 20px;
-      /* 左边距 */
       border-bottom: 1px solid #ccc;
-      /* 上方框架底部边框线 */
     }
 
     .top-text {
       font-size: 36px;
-      /* 放大字体 */
       font-weight: bold;
     }
 
     .bottom {
       height: calc(100% - 100px);
-      /* 控制底部框架的高度 */
       display: flex;
     }
 
     .left {
       min-width: 220px;
-      /* 控制左边框架的最小宽度 */
-      /* 将鼠标指针改为手型 */
       border-right: 1px solid #ccc;
-      /* 左边框架右侧边框线 */
       padding-right: 10px;
-      /* 右内边距用于显示边框 */
       white-space: nowrap;
-      /* 防止文字换行 */
-      /* 设置文字颜色为蓝色 */
       color: blue;
-      font-size: 18px; /* 調整左邊框架字體大小 */	  
+      font-size: 18px; 
     }
 
     .left ul {
       padding: 0;
-      /* 移除默认内边距 */
       list-style-position: outside;
-      /* 项目符号显示在外侧 */
-      list-style-type: disc;
-      /* 使用实心圆作为项目符号 */
-      /* 设置超链接下划线 */
+      list-style-type: disc; /* 項次編號圖 */
       text-decoration: underline;
     }
 
     .left li {
       margin-left: 1.5em;
-      /* 调整项目符号与文字之间的距离 */
       cursor: pointer;
-      /* 将鼠标指针改为手型 */
-      /* 设置超链接下划线 */
       text-decoration: underline;
     }
 
     .left a {
-      /* 设置超链接文字颜色为蓝色 */
       color: blue;
     }
 
     .right {
-      width: calc(100% - 220px);
-      /* 控制右边框架的宽度 */
+      width: calc(100% - 220px);  /* 控制右边框架的宽度，上方要一起改 */
       border: none;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       margin-top: 10px;
-      /* 添加上边距 */
       margin-left: 10px;
-      /* 添加左边距 */
     }
 
     .right img {
-      /* 调整图片大小 */
-      width: 40%;
+      width: 40%;   /* 圖片大小 */
       height: auto;
-      /* 添加边距 */
-      margin-top: 10px;
+      margin-top: 10px;  /* 邊距 */
       margin-left: 10px;
     }
   </style>
@@ -110,11 +84,11 @@
     window.onload = function () {
       const links = document.querySelectorAll('.left li a');
       const rightFrame = document.querySelector('.right');
-      const initialFrameContent = rightFrame.innerHTML; // 保存初始内容
+      const initialFrameContent = rightFrame.innerHTML;
 
       links.forEach(link => {
         link.addEventListener('click', function (event) {
-          event.preventDefault(); // 阻止默认链接跳转行为
+          event.preventDefault(); 
 
           if (link.textContent === 'Parse_du_stats') {
             rightFrame.innerHTML =
