@@ -49,13 +49,14 @@
       padding-right: 10px;
       white-space: nowrap;
       color: blue;
-      font-size: 16px; 
+      font-size: 16px;
     }
 
     .left ul {
       padding: 0;
       list-style-position: outside;
-      list-style-type: disc; /* 項次編號圖 */
+      list-style-type: disc;
+      /* 項次編號圖 */
       text-decoration: underline;
     }
 
@@ -70,11 +71,11 @@
     }
 
     .right {
-      width: calc(100% - 180px);  /* 控制右邊框架寬度，上方要一起改 */
+      width: calc(100% - 180px);
       border: none;
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
+      flex-direction: column;  /* 將內容排列為直行 */
+      align-items: flex-start;  /* 設置項目靠左對齊 */
       margin-top: 10px;
       margin-left: 10px;
     }
@@ -82,8 +83,18 @@
     .right img {
       width: 40%;   /* 圖片大小 */
       height: auto;
-      margin-top: 10px;  /* 邊距 */
+      margin-top: 10px;   /* 邊距 */
       margin-left: 10px;
+    }
+
+    .author-info {
+      font-size: 14px;
+      color: #888;
+      /* 灰色 */
+      margin-top: 5px;
+      /* 调整顶部边距 */
+      padding-left: 10px;
+      /* 调整左边边距 */
     }
   </style>
   <script>
@@ -94,7 +105,7 @@
 
       links.forEach(link => {
         link.addEventListener('click', function (event) {
-          event.preventDefault(); 
+          event.preventDefault();
 
           if (link.textContent === 'Parse_du_stats') {
             rightFrame.innerHTML =
@@ -154,8 +165,8 @@
           <li><a href="#">NR_Tput_Calculator</a></li>
           <li><a href="#">arfcn_freq_convert</a></li>
           <li><a href="#">ssb_calculator</a></li>
-		  <li><a href="#">ssb_xml</a></li>
-		  <li><a href="#">ssb_draw</a></li>
+          <li><a href="#">ssb_xml</a></li>
+          <li><a href="#">ssb_draw</a></li>
           <li><a href="#">millisecond_clock</a></li>
           <li><a href="#">Watt_dBm_converter</a></li>
           <li><a href="#">sNSSAI_calculator</a></li>
@@ -164,7 +175,13 @@
         </ul>
       </div>
       <div class="right">
+        <!-- 图片 -->
         <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/photo2.jpg" alt="Photo" />
+        <br>
+        <!-- 作者信息 -->
+        <div class="author-info">
+          Author: Dustin_Chen, email: Dustin_Chen@compal.com
+        </div>
       </div>
     </div>
   </div>
