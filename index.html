@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Maple_Tool</title>
+  <style>
+    /* 设置整体布局 */
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      /* 更改字体 */
+    }
+
+    /* 分割上、左、右框架 */
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top {
+      height: 70px;
+      /* 控制上方框架的高度 */
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      /* 左边距 */
+      border-bottom: 1px solid #ccc;
+      /* 上方框架底部边框线 */
+    }
+
+    .top-text {
+      font-size: 36px;
+      /* 放大字体 */
+      font-weight: bold;
+    }
+
+    .bottom {
+      height: calc(100% - 100px);
+      /* 控制底部框架的高度 */
+      display: flex;
+    }
+
+    .left {
+      min-width: 220px;
+      /* 控制左边框架的最小宽度 */
+      /* 将鼠标指针改为手型 */
+      border-right: 1px solid #ccc;
+      /* 左边框架右侧边框线 */
+      padding-right: 10px;
+      /* 右内边距用于显示边框 */
+      white-space: nowrap;
+      /* 防止文字换行 */
+      /* 设置文字颜色为蓝色 */
+      color: blue;
+      font-size: 18px; /* 調整左邊框架字體大小 */	  
+    }
+
+    .left ul {
+      padding: 0;
+      /* 移除默认内边距 */
+      list-style-position: outside;
+      /* 项目符号显示在外侧 */
+      list-style-type: disc;
+      /* 使用实心圆作为项目符号 */
+      /* 设置超链接下划线 */
+      text-decoration: underline;
+    }
+
+    .left li {
+      margin-left: 1.5em;
+      /* 调整项目符号与文字之间的距离 */
+      cursor: pointer;
+      /* 将鼠标指针改为手型 */
+      /* 设置超链接下划线 */
+      text-decoration: underline;
+    }
+
+    .left a {
+      /* 设置超链接文字颜色为蓝色 */
+      color: blue;
+    }
+
+    .right {
+      width: calc(100% - 220px);
+      /* 控制右边框架的宽度 */
+      border: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-top: 10px;
+      /* 添加上边距 */
+      margin-left: 10px;
+      /* 添加左边距 */
+    }
+
+    .right img {
+      /* 调整图片大小 */
+      width: 40%;
+      height: auto;
+      /* 添加边距 */
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const links = document.querySelectorAll('.left li a');
+      const rightFrame = document.querySelector('.right');
+      const initialFrameContent = rightFrame.innerHTML; // 保存初始内容
+
+      links.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault(); // 阻止默认链接跳转行为
+
+          if (link.textContent === 'Parse_du_stats') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/parse_du4/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'NR_Tput_Calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/NR_Tput/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'ssb_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/ssb_calculate/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'millisecond_clock') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/clock/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'Watt_dBm_converter') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/dBm_W/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'sNSSAI_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/slice/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          }else if (link.textContent === 'Home') {
+            rightFrame.innerHTML = initialFrameContent; // 回到初始内容
+          } else if (link.textContent === 'E-mail') {
+            window.open('mailto:compalmaple@gmail.com', '_blank');
+          }
+        });
+      });
+    };
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="top">
+      <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/logo.jpg" alt="Maple Tool Logo"
+        style="height: 50px; margin-right: 10px;">
+      <div class="top-text">Maple_Tool</div>
+    </div>
+
+    <div class="bottom">
+      <div class="left">
+        <ul>
+          <li><a href="#" id="homeLink">Home</a></li>
+          <li><a href="#">Parse_du_stats</a></li>
+          <li><a href="#">NR_Tput_Calculator</a></li>
+          <li><a href="#">ssb_calculator</a></li>
+          <li><a href="#">millisecond_clock</a></li>
+          <li><a href="#">Watt_dBm_converter</a></li>
+          <li><a href="#">sNSSAI_calculator</a></li>
+          <li><a href="mailto:compalmaple@gmail.com" target="_blank">E-mail</a></li>
+        </ul>
+      </div>
+      <div class="right">
+        <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/photo2.jpg" alt="Photo" />
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
