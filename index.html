@@ -49,7 +49,9 @@
       padding-right: 10px;
       white-space: nowrap;
       color: blue;
-      font-size: 16px;
+      font-size: 15px;
+      padding-left: 10px;
+      /*調整左側菜單的左側邊距*/
     }
 
     .left ul {
@@ -74,16 +76,20 @@
       width: calc(100% - 180px);
       border: none;
       display: flex;
-      flex-direction: column;  /* 將內容排列為直行 */
-      align-items: flex-start;  /* 設置項目靠左對齊 */
+      flex-direction: column;
+      /* 將內容排列為直行 */
+      align-items: flex-start;
+      /* 設置項目靠左對齊 */
       margin-top: 10px;
       margin-left: 10px;
     }
 
     .right img {
-      width: 40%;   /* 圖片大小 */
+      width: 40%;
+      /* 圖片大小 */
       height: auto;
-      margin-top: 10px;   /* 邊距 */
+      margin-top: 10px;
+      /* 邊距 */
       margin-left: 10px;
     }
 
@@ -92,9 +98,22 @@
       color: #888;
       /* 灰色 */
       margin-top: 5px;
-      /* 调整顶部边距 */
+      /* 調整頂部邊距 */
       padding-left: 10px;
-      /* 调整左边边距 */
+      /* 調整左邊邊距 */
+    }
+
+    /* 調整 Visitor Badge 樣式 */
+    .visitor-badge-container {
+      margin-top: 10px;
+      /* 調整 Visitor Badge 頂部邊距 */
+      margin-left: 10px;
+      /* 調整 Visitor Badge 左側邊距 */
+    }
+
+    .left li.visitor-badge-container {
+      list-style-type: none;
+      /* 取消 Visitor Badge 列表項的默認編號 */
     }
   </style>
   <script>
@@ -138,7 +157,7 @@
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/bw_wireshark/" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'Home') {
-            rightFrame.innerHTML = initialFrameContent; // 回到初始内容
+            rightFrame.innerHTML = initialFrameContent; // 回到初始內容
           } else if (link.textContent === 'E-mail') {
             window.open('mailto:compalmaple@gmail.com', '_blank');
           }
@@ -172,13 +191,21 @@
           <li><a href="#">sNSSAI_calculator</a></li>
           <li><a href="#">bw_wireshark</a></li>
           <li><a href="mailto:compalmaple@gmail.com" target="_blank">E-mail</a></li>
+          <br>
+          <li class="visitor-badge-container">
+            <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fdustinchen26.github.io%2Fmaple%2F"
+              onclick="window.open(this.href, '_blank'); return false;">
+              <img
+                src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fdustinchen26.github.io%2Fmaple%2F&countColor=%232ccce4&style=flat&labelStyle=upper" />
+            </a>
+          </li>
         </ul>
       </div>
       <div class="right">
-        <!-- 图片 -->
+        <!-- 圖片 -->
         <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/photo2.jpg" alt="Photo" />
         <br>
-        <!-- 作者信息 -->
+        <!-- 作者資訊 -->
         <div class="author-info">
           Author: Dustin_Chen, email: Dustin_Chen@compal.com
         </div>
