@@ -103,7 +103,28 @@
       /* 調整左邊邊距 */
     }
 
-    /* 調整 Visitor Badge 樣式 */
+    .table-container {
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+	  font-size: 14px; /* Set the font size for table cells */
+	  line-height: 10px; /* Set the minimum line height for table cells */
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
     .visitor-badge-container {
       margin-top: 10px;
       /* 調整 Visitor Badge 頂部邊距 */
@@ -202,10 +223,20 @@
         </ul>
       </div>
       <div class="right">
-        <!-- 圖片 -->
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Dates</th>
+              <th>Update note</th>
+            </tr>
+            <tr>
+              <td>2023/12/26</td>
+              <td>Maple_Tool 網站首次上線</td>
+            </tr>
+          </table>
+        </div>
         <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/photo2.jpg" alt="Photo" />
         <br>
-        <!-- 作者資訊 -->
         <div class="author-info">
           Author: Dustin_Chen, email: Dustin_Chen@compal.com
         </div>
