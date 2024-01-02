@@ -57,19 +57,21 @@
     .left ul {
       padding: 0;
       list-style-position: outside;
-      list-style-type: disc;
-      /* 項次編號圖 */
-      text-decoration: underline;
+      list-style-type: disc; /* Set the list item marker to disc */
     }
 
     .left li {
       margin-left: 1.5em;
       cursor: pointer;
-      text-decoration: underline;
     }
 
     .left a {
       color: blue;
+      text-decoration: none; /* Remove underline */
+    }
+
+    .left a:hover {
+      text-decoration: underline; /* Add underline on hover */
     }
 
     .right {
