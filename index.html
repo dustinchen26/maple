@@ -251,6 +251,9 @@
           } else if (link.textContent === 'rtsp_time_update') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/time_update" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'parse_ping_fail') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/parse_ping_fail" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'E-mail') {
             window.open('mailto:compalmaple@gmail.com', '_blank');
           }
@@ -307,7 +310,8 @@
           <li><a href="#">time_calculator</a></li>
           <li><a href="#">unix_time_converter</a></li> 
           <li><a href="#">rtsp_time_calculator</a></li> 
-          <li><a href="#">rtsp_time_update</a></li> 		  
+          <li><a href="#">rtsp_time_update</a></li> 
+          <li><a href="#">parse_ping_fail</a></li> 		  
           <li><a href="mailto:compalmaple@gmail.com" target="_blank">E-mail</a></li>
           <br>
           <li class="visitor-badge-container">
