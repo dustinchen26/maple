@@ -146,8 +146,28 @@
       links.forEach(link => {
         link.addEventListener('click', function (event) {
           event.preventDefault();
-
-          if (link.textContent === 'split_file') {
+          
+		  if (link.textContent === 'Home') {
+            rightFrame.innerHTML = initialFrameContent; // 回到初始內容
+          } else if (link.textContent === 'gNBId_CellId_PCI_nRTCI_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/id" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'NR_Tput_Calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/NR_Tput/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'arfcn_freq_convert') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/arfcn/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'ssb_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/ssb_calculate/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'ssb_xml') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/ssb_xml/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'ssb_draw') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/gscn_draw/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'split_file') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/split" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'RIV_calculator') {
@@ -198,21 +218,6 @@
           } else if (link.textContent === 'Parse_Ping_draw_CPE') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/parse_ping_CPE/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'NR_Tput_Calculator') {
-            rightFrame.innerHTML =
-              '<iframe src="https://dustinchen26.github.io/NR_Tput/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'arfcn_freq_convert') {
-            rightFrame.innerHTML =
-              '<iframe src="https://dustinchen26.github.io/arfcn/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'ssb_calculator') {
-            rightFrame.innerHTML =
-              '<iframe src="https://dustinchen26.github.io/ssb_calculate/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'ssb_xml') {
-            rightFrame.innerHTML =
-              '<iframe src="https://dustinchen26.github.io/ssb_xml/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'ssb_draw') {
-            rightFrame.innerHTML =
-              '<iframe src="https://dustinchen26.github.io/gscn_draw/" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'millisecond_clock') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/clock/" style="width: 100%; height: 100%; border: none;"></iframe>';
@@ -240,8 +245,6 @@
           } else if (link.textContent === 'SNR_RSSI_actual_value_Calculator') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/power/" style="width: 100%; height: 100%; border: none;"></iframe>';
-          } else if (link.textContent === 'Home') {
-            rightFrame.innerHTML = initialFrameContent; // 回到初始內容
           } else if (link.textContent === 'time_calculator') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/time_calculator" style="width: 100%; height: 100%; border: none;"></iframe>';
@@ -279,6 +282,7 @@
       <div class="left">
         <ul>
           <li><a href="#" id="homeLink">Home</a></li>
+          <li><a href="#">gNBId_CellId_PCI_nRTCI_calculator</a></li>
           <li><a href="#">NR_Tput_Calculator</a></li>
           <li><a href="#">arfcn_freq_convert</a></li>
           <li><a href="#">ssb_calculator</a></li>
@@ -338,8 +342,8 @@
               <td>Maple_Tool 網站首次上線</td>
             </tr>
             <tr>
-              <td>2024/03/31</td>
-              <td>新增Parse_du_stats_upload，改成文件上傳，可處理大文件</td>
+              <td>2024/09/16</td>
+              <td>add gNBId_CellId_PCI_nRTCI_calculator</td>
             </tr>
           </table>
         </div>
