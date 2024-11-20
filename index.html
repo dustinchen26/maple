@@ -251,6 +251,9 @@
           } else if (link.textContent === 'draw_total_Tput_BLER_upload') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/draw_Tput_BLER_upload/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'total_Tput_BLER_upload_excel') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/draw_Tput_BLER_upload_excel" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'Parse_RSRP_excel') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/parse_RSRP/" style="width: 100%; height: 100%; border: none;"></iframe>';
@@ -380,7 +383,8 @@
 		  <li><a href="#">Parse_du_stats_ulbler_draw_upload</a></li>
           <li><a href="#">Parse_du_stats_dlbler_draw</a></li>
           <li><a href="#">draw_total_Tput_BLER</a></li>
-          <li><a href="#">draw_total_Tput_BLER_upload</a></li>		  
+          <li><a href="#">draw_total_Tput_BLER_upload</a></li>	
+          <li><a href="#">total_Tput_BLER_upload_excel</a></li>			  
           <li><a href="#">Parse_RSRP_excel</a></li>
           <li><a href="#">Parse_RSRP_draw</a></li>
           <li><a href="#">Upload_Parse_RSRP_draw</a></li>
@@ -455,7 +459,7 @@
             </tr>	
             <tr>
               <td>2024/11/20</td>
-              <td>add parse_du_Tput_upload_filter & merge_DU_and_filter_Tput</td>
+              <td>add parse_du_Tput_upload_filter & merge_DU_and_filter_Tput & total_Tput_BLER_upload_excel</td>
             </tr>
           </table>
         </div>
