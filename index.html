@@ -34,6 +34,12 @@
       align-items: center;
       padding-left: 20px;
       border-bottom: 1px solid #ccc;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: white;
+      z-index: 1000; /* Keep it on top */
     }
 
     .top-text {
@@ -41,26 +47,32 @@
       font-weight: bold;
     }
 
+/* .bottom 使用 flex 來設置左右排列 */
     .bottom {
-      height: calc(100% - 100px);
       display: flex;
+      flex: 1;
+      margin-top: 70px; /* Ensure space for the fixed top */
     }
 
+/* 左邊框架 */
     .left {
-      min-width: 180px;
+  width: 280px; /* 直接設定寬度為 280px */
+  /* 或者如果希望是百分比寬度： */
+  /* width: 25%; 這樣可以根據父容器的寬度調整 */
       border-right: 1px solid #ccc;
       padding-right: 20px;
       white-space: nowrap;
       color: black;
       font-size: 15px;
       padding-left: 2px;
-      /*調整左側菜單的左側邊距*/
+      height: calc(100vh - 70px); /* Fill the remaining height below the top */
+      overflow-y: auto; /* Enable scrolling */
     }
 
     .left ul {
       padding: 0;
       list-style-position: outside;
-      list-style-type: disc; /* Set the list item marker to disc */
+      list-style-type: disc;
     }
 
     .left li {
@@ -70,23 +82,24 @@
 
     .left a {
       color: black;
-      text-decoration: none; /* Remove underline */
+      text-decoration: none;
     }
 
     .left a:hover {
-      text-decoration: underline; /* Add underline on hover */
+      text-decoration: underline;
     }
 
+/* 右邊框架 */
     .right {
-      width: calc(100% - 180px);
+  width: calc(100% - 280px); /* 根據新的左邊寬度計算右邊寬度 */
       border: none;
       display: flex;
       flex-direction: column;
-      /* 將內容排列為直行 */
       align-items: flex-start;
-      /* 設置項目靠左對齊 */
       margin-top: 10px;
       margin-left: 10px;
+  flex-grow: 1; /* 讓 .right 填滿剩餘空間 */
+  overflow-y: auto; /* 增加垂直捲軸 */
     }
 
     .right img {
@@ -100,7 +113,8 @@
 
     .author-info {
       font-size: 14px;
-      color: #888;   /* 灰色 */
+      color: #888;
+      /* 灰色 */
     }
 
     .table-container {
@@ -113,12 +127,15 @@
       table-layout: auto;
     }
 
-    th, td {
+    th,
+    td {
       border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
-	  font-size: 14px; /* Set the font size for table cells */
-	  line-height: 10px; /* Set the minimum line height for table cells */
+      font-size: 14px;
+      /* Set the font size for table cells */
+      line-height: 10px;
+      /* Set the minimum line height for table cells */
     }
 
     th {

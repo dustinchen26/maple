@@ -1,0 +1,311 @@
+底下html框架有3個部分，上面，左邊，右邊，
+請把上面固定，左邊增加卷軸，右邊也增加卷軸，可以分別控制左邊和右邊要捲動到哪裡
+
+
+<!-- 
+  Copyright © [2023] [Dustin_Chen]. All rights reserved.
+  Author: Dustin_Chen 陳智禮
+  Email:  Dustin_Chen@compal.com or chuhpsdustin@gmail.com
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="google-site-verification" content="ZjELgBI5O2uzTw27OiVLYKkC8UxmLzg_8N6wYwsSDzY" />
+
+  <meta charset="UTF-8">
+  <title>Maple_Tool</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/dustinchen26/maple/master/icon.png" type="image/png">
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* 分割上、左、右框架 */
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .top-text {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .bottom {
+      display: flex;
+  flex: 1; /* Allow .bottom to grow and fill remaining space */
+    }
+
+    .left {
+      min-width: 180px;
+      border-right: 1px solid #ccc;
+      padding-right: 20px;
+      white-space: nowrap;
+      color: black;
+      font-size: 15px;
+      padding-left: 2px;
+      /*調整左側菜單的左側邊距*/
+    }
+
+    .left ul {
+      padding: 0;
+      list-style-position: outside;
+      list-style-type: disc; /* Set the list item marker to disc */
+    }
+
+    .left li {
+      margin-left: 1.5em;
+      cursor: pointer;
+    }
+
+    .left a {
+      color: black;
+      text-decoration: none; /* Remove underline */
+    }
+
+    .left a:hover {
+      text-decoration: underline; /* Add underline on hover */
+    }
+
+    .right {
+      width: calc(100% - 180px);
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 10px;
+      margin-left: 10px;
+  flex-grow: 1; /* Allow .right to take up all remaining space */
+    }
+
+    .right img {
+      width: 40%;
+      /* 圖片大小 */
+      height: auto;
+      margin-top: 10px;
+      /* 邊距 */
+      margin-left: 10px;
+    }
+
+    .author-info {
+      font-size: 14px;
+      color: #888;   /* 灰色 */
+    }
+
+    .table-container {
+      margin-top: 10px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      table-layout: auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+	  font-size: 14px; /* Set the font size for table cells */
+	  line-height: 10px; /* Set the minimum line height for table cells */
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .visitor-badge-container {
+      margin-top: 10px;
+      /* 調整 Visitor Badge 頂部邊距 */
+      margin-left: 10px;
+      /* 調整 Visitor Badge 左側邊距 */
+    }
+
+    .left li.visitor-badge-container {
+      list-style-type: none;
+      /* 取消 Visitor Badge 列表項的默認編號 */
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      const links = document.querySelectorAll('.left li a');
+      const rightFrame = document.querySelector('.right');
+      const initialFrameContent = rightFrame.innerHTML;
+
+      links.forEach(link => {
+        link.addEventListener('click', function (event) {
+          event.preventDefault();
+          
+		  if (link.textContent === 'Home') {
+            rightFrame.innerHTML = initialFrameContent; // 回到初始內容
+          } else if (link.textContent === '1CU_1DU_2RU_nRTCI_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/1_1_2_id" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === '2CU_2DU_2RU_nRTCI_calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/2_2_2_id" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'NR_Tput_Calculator') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/NR_Tput/" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } 
+        });
+      });
+    };
+  </script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="top">
+      <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/logo.jpg" alt="Maple Tool Logo"
+        style="height: 50px; margin-right: 10px;">
+      <div class="top-text">Maple_Tool</div>
+    </div>
+
+    <div class="bottom">
+      <div class="left">
+        <ul>
+          <li><a href="#" id="homeLink">Home</a></li>
+          <li><a href="#">1CU_1DU_2RU_nRTCI_calculator</a></li>
+          <li><a href="#">2CU_2DU_2RU_nRTCI_calculator</a></li>
+          <li><a href="#">NR_Tput_Calculator</a></li>
+          <li><a href="#">arfcn_freq_convert</a></li>
+          <li><a href="#">ssb_calculator</a></li>
+          <li><a href="#">ssb_xml</a></li>
+          <li><a href="#">ssb_draw</a></li>
+		  <li><a href="#">RIV_calculator</a></li>
+		  <li><a href="#">cce_index_calculator</a></li>
+          <li><a href="#">millisecond_clock</a></li>
+          <li><a href="#">Watt_dBm_converter</a></li>
+          <li><a href="#">sNSSAI_calculator</a></li>	
+		  <li><a href="#">QA_RSRP_SINR</a></li>
+		  <li><a href="#">QA_RSRP_RX0123</a></li>
+		  <li><a href="#">QA_Tput</a></li>
+		  <li><a href="#">QA_Tput_excel</a></li>
+		  <li><a href="#">Parse_cu_stats</a></li>
+		  <li><a href="#">Parse_cu_stats_upload</a></li>
+		  <li><a href="#">Parse_cu_stats_draw</a></li>
+		  <li><a href="#">Parse_cu_stats_draw_upload</a></li>
+		  <li><a href="#">Parse_cu_stats_draw_upload_filter</a></li>
+		  <li><a href="#">Parse_cu_stats_excel</a></li>
+		  <li><a href="#">Parse_cu_stats_excel_upload</a></li>		 
+		  <li><a href="#">Parse_cu_stats_excel_upload_filter</a></li>	
+          <li><a href="#">merge_DU_and_filter_Tput</a></li>		  
+          <li><a href="#">parse_du_Tput</a></li>
+          <li><a href="#">parse_du_Tput_upload</a></li>	
+          <li><a href="#">parse_du_Tput_upload_filter</a></li>			  
+          <li><a href="#">Parse_du_stats</a></li>
+          <li><a href="#">Parse_du_stats_upload</a></li>
+          <li><a href="#">Parse_du_stats_bler_percent</a></li>
+          <li><a href="#">Parse_du_stats_ulbler_draw</a></li>
+		  <li><a href="#">Parse_du_stats_ulbler_draw_upload</a></li>
+          <li><a href="#">Parse_du_stats_dlbler_draw</a></li>
+          <li><a href="#">DU_draw_total_Tput_BLER</a></li>
+          <li><a href="#">DU_draw_total_Tput_BLER_upload</a></li>	
+          <li><a href="#">DU_total_Tput_BLER_upload_excel</a></li>			  
+          <li><a href="#">Parse_RSRP_excel</a></li>
+          <li><a href="#">Parse_RSRP_draw</a></li>
+          <li><a href="#">Upload_Parse_RSRP_draw</a></li>
+          <li><a href="#">mifi_RSRP_SINR</a></li>
+          <li><a href="#">mifi_RSRP_SINR_split</a></li>
+          <li><a href="#">mifi_RSRP_SINR_excel</a></li>		  
+          <li><a href="#">Parse_Ping_draw_mifi_CPE</a></li>
+          <li><a href="#">Parse_Ping_draw_CPE</a></li>
+          <li><a href="#">Ping_mifi_graph</a></li>
+          <li><a href="#">bw_wireshark</a></li>
+          <li><a href="#">RSRP_RSRQ_SINR</a></li>
+		  <li><a href="#">PUCCH_resource_index</a></li>
+		  <li><a href="#">pci_lock_info</a></li>
+		  <li><a href="#">fix_band</a></li>
+		  <li><a href="#">SNR_RSSI_actual_value_Calculator</a></li>
+          <li><a href="#">split_file</a></li>
+          <li><a href="#">time_calculator</a></li>
+          <li><a href="#">unix_time_converter</a></li> 
+          <li><a href="#">rtsp_time_calculator</a></li> 
+          <li><a href="#">rtsp_time_update</a></li> 
+          <li><a href="#">parse_ping_fail</a></li> 
+          <li><a href="#">merge_file</a></li> 
+          <li><a href="mailto:compalmaple@gmail.com" target="_blank">E-mail</a></li>
+          <br>
+          <li class="visitor-badge-container">
+            <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fdustinchen26.github.io%2Fmaple%2F"
+              onclick="window.open(this.href, '_blank'); return false;">
+              <img
+                src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fdustinchen26.github.io%2Fmaple%2F&countColor=%232ccce4&style=flat&labelStyle=upper" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="right">
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Dates</th>
+              <th>Update note</th>
+            </tr>
+            <tr>
+              <td>2023/12/26</td>
+              <td>Maple_Tool 網站首次上線</td>
+            </tr>
+            <tr>
+              <td>2024/09/16</td>
+              <td>add 1CU_1DU_2RU_nRTCI_calculator & 2CU_2DU_2RU_nRTCI_calculator</td>
+            </tr>
+            <tr>
+              <td>2024/11/13</td>
+              <td>add mifi_RSRP_SINR</td>
+            </tr>
+            <tr>
+              <td>2024/11/15</td>
+              <td>add Parse_cu_stats_upload & Parse_cu_stats_draw & Parse_cu_stats_draw_upload</td>
+            </tr>	
+            <tr>
+              <td>2024/11/16</td>
+              <td>add QA_RSRP_RX0123 & QA_RSRP_SINR</td>
+            </tr>	
+            <tr>
+              <td>2024/11/17</td>
+              <td>add mifi_RSRP_SINR_excel & QA_Tput_excel & mifi_RSRP_SINR</td>
+            </tr>	
+            <tr>
+              <td>2024/11/18</td>
+              <td>add parse_cu_excel & parse_cu_excel_upload</td>
+            </tr>	
+            <tr>
+              <td>2024/11/19</td>
+              <td>add parse_cu_draw_upload_filter & merge_file & Parse_cu_stats_excel_upload_filter & parse_du_Tput & parse_du_Tput_upload</td>
+            </tr>	
+            <tr>
+              <td>2024/11/20</td>
+              <td>add parse_du_Tput_upload_filter & merge_DU_and_filter_Tput & total_Tput_BLER_upload_excel</td>
+            </tr>
+          </table>
+        </div>
+        <img src="https://raw.githubusercontent.com/dustinchen26/maple/master/maple_photo2.JPG" alt="Photo" />
+        <br>
+<div class="author-info">
+  Copyright © [2023] [Dustin_Chen@compal.com]. All rights reserved.
+  <div style="color: white;">Author: dustin_chen 陳智禮 chuhpsdustin@gmail.com</div>
+</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
