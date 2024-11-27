@@ -56,17 +56,15 @@
 
 /* 左邊框架 */
     .left {
-  width: 280px; /* 直接設定寬度為 280px */
-  /* 或者如果希望是百分比寬度： */
-  /* width: 25%; 這樣可以根據父容器的寬度調整 */
+  width: 280px;
       border-right: 1px solid #ccc;
       padding-right: 20px;
       white-space: nowrap;
       color: black;
       font-size: 15px;
       padding-left: 2px;
-      height: calc(100vh - 70px); /* Fill the remaining height below the top */
-      overflow-y: auto; /* Enable scrolling */
+  height: calc(100vh - 70px); /* 保證左邊框架的高度適應剩餘高度 */
+  overflow-y: auto;
     }
 
     .left ul {
@@ -91,24 +89,22 @@
 
 /* 右邊框架 */
     .right {
-  width: calc(100% - 280px); /* 根據新的左邊寬度計算右邊寬度 */
+      width: calc(100% - 280px);
       border: none;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       margin-top: 10px;
       margin-left: 10px;
-  flex-grow: 1; /* 讓 .right 填滿剩餘空間 */
-  overflow-y: auto; /* 增加垂直捲軸 */
+      flex-grow: 1;
+  height: calc(100vh - 70px); /* 讓右側框架高度與左側一致 */
+      overflow-y: auto;
     }
 
     .right img {
-      width: 40%;
-      /* 圖片大小 */
-      height: auto;
+  max-width: 50%; /* Ensure the image scales to fit the container */
+  height: auto; /* Keep the image's aspect ratio intact */
       margin-top: 10px;
-      /* 邊距 */
-      margin-left: 10px;
+  width: 100%; /* Make the image's width 100% of the parent container (table container) */
     }
 
     .author-info {
@@ -121,28 +117,43 @@
       margin-top: 10px;
     }
 
+    /* 確保表格使用固定寬度 */
     table {
+    width: auto;
+    table-layout: fixed;  /* 固定寬度，使其按照內容的最大寬度來排列 */
       border-collapse: collapse;
-      width: 100%;
-      table-layout: auto;
     }
 
     th,
     td {
-      border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
       font-size: 14px;
-      /* Set the font size for table cells */
-      line-height: 10px;
-      /* Set the minimum line height for table cells */
+    line-height: 20px;
+    border: 1px solid #ccc;
     }
 
     th {
       background-color: #f2f2f2;
     }
 
-    .visitor-badge-container {
+  /* 設定圖片的寬度與表格一致 */
+  .right img {
+    width: 100%;  /* 設定為100%，與表格寬度一致 */
+    height: auto;
+  }
+
+  .image-container {
+    width: 100%;  /* 確保圖片容器寬度與表格一致 */
+    max-width: 100%; /* 限制容器寬度 */
+    margin-top: 10px;
+  }
+
+    .author-info {
+      font-size: 14px;
+      color: #888;
+      margin-top: 10px;
+    }    .visitor-badge-container {
       margin-top: 10px;
       /* 調整 Visitor Badge 頂部邊距 */
       margin-left: 10px;
@@ -508,12 +519,13 @@
               <td>add mifi_watch_RSRP_SINR_upload_filter</td>
             </tr>				
           </table>
+
+        <div class="image-container">
+          <img src="https://raw.githubusercontent.com/dustinchen26/maple/refs/heads/master/maple_photo7.jpg" alt="3GPP NR Release 17 Tput">
         </div>
-        <img src="https://raw.githubusercontent.com/dustinchen26/maple/refs/heads/master/maple_photo7.jpg" alt="Photo" />
-        <br>
+
 <div class="author-info">
-  Copyright © [2023] [Dustin_Chen@compal.com]. All rights reserved.
-  <div style="color: white;">Author: dustin_chen 陳智禮 chuhpsdustin@gmail.com</div>
+          <p>Copyright © [2023] [Dustin_Chen]. All rights reserved.</p>
 </div>
       </div>
     </div>
