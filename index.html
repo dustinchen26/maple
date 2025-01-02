@@ -348,6 +348,9 @@
           } else if (link.textContent === 'Ping_mifi_graph') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/draw_mifi_ping" style="width: 100%; height: 100%; border: none;"></iframe>';
+          } else if (link.textContent === 'Ping_server_graph') {
+            rightFrame.innerHTML =
+              '<iframe src="https://dustinchen26.github.io/ping_server" style="width: 100%; height: 100%; border: none;"></iframe>';
           } else if (link.textContent === 'millisecond_clock') {
             rightFrame.innerHTML =
               '<iframe src="https://dustinchen26.github.io/clock/" style="width: 100%; height: 100%; border: none;"></iframe>';
@@ -466,6 +469,7 @@
           <li><a href="#">Parse_Ping_draw_mifi_CPE</a></li>
           <li><a href="#">Parse_Ping_draw_CPE</a></li>
           <li><a href="#">Ping_mifi_graph</a></li>
+          <li><a href="#">Ping_server_graph</a></li>		  
           <li><a href="#">bw_wireshark</a></li>
           <li><a href="#">RSRP_RSRQ_SINR</a></li>
 		  <li><a href="#">PUCCH_resource_index</a></li>
@@ -540,6 +544,10 @@
             <tr>
               <td>2024/11/27</td>
               <td>add mifi_watch_RSRP_SINR_upload_filter</td>
+            </tr>		
+            <tr>
+              <td>2025/01/02</td>
+              <td>add ping_server_graph</td>
             </tr>				
           </table>
 
